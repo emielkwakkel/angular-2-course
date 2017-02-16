@@ -1,0 +1,12 @@
+<p>
+  car has {{ wheels }} wheels.
+</p>
+<button (click)="onClick()">Start engine</button>
+
+<h2>Engines</h2>
+<ul>
+  <li *ngFor="let engine of engines">
+    {{ engine.name }}
+  </li>
+</ul>
+{{ errorMessage }}
