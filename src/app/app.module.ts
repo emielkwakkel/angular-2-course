@@ -11,33 +11,35 @@ import { EngineListComponent } from './engine/engine-list/engine-list.component'
 import { EngineDetailComponent } from './engine/engine-detail/engine-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { EngineService } from "./engine/engine.service";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CarComponent,
-    EngineListComponent,
-    EngineDetailComponent,
-    DashboardComponent,
-    PageNotFoundComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    RouterModule.forRoot([
-      { path: 'engines', component: EngineListComponent },
-      { path: 'car', component: CarComponent },
-      { path: 'engine/:id', component: EngineDetailComponent },
-      { path: 'dashboard', component: DashboardComponent },
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
-      { path: '**', component: PageNotFoundComponent},
-    ])
-  ],
-  providers: [
-    CarService
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        CarComponent,
+        EngineListComponent,
+        EngineDetailComponent,
+        DashboardComponent,
+        PageNotFoundComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        RouterModule.forRoot([
+            { path: 'engines', component: EngineListComponent },
+            { path: 'car', component: CarComponent },
+            { path: 'engine/:id', component: EngineDetailComponent },
+            { path: 'dashboard', component: DashboardComponent },
+            { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+            { path: '**', component: PageNotFoundComponent },
+        ])
+    ],
+    providers: [
+        CarService,
+        EngineService
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }

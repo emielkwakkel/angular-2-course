@@ -11,11 +11,7 @@ export class CarComponent implements OnInit {
     @Input() wheels: number;
     @Output() startEngine: EventEmitter<string> = new EventEmitter<string>();
 
-    // Set public values
-    public engines: IEngine[];
-    public errorMessage: string = '';
-
-    constructor(private _carService: CarService) {
+    constructor() {
     }
 
     onClick() {
@@ -24,10 +20,6 @@ export class CarComponent implements OnInit {
 
     ngOnInit() {
         console.log(this.wheels);
-        this._carService
-            .getEngines()
-            .subscribe(engines => this.engines = <IEngine[]>engines,
-                error => this.errorMessage = <any>error);
     }
 
 }
