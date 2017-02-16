@@ -12,6 +12,7 @@ import { EngineDetailComponent } from './engine/engine-detail/engine-detail.comp
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { EngineService } from "./engine/engine.service";
+import { EngineDetailGuard } from "./engine/engine-detail/engine-detail-guard.service";
 
 @NgModule({
     declarations: [
@@ -29,7 +30,9 @@ import { EngineService } from "./engine/engine.service";
         RouterModule.forRoot([
             { path: 'engines', component: EngineListComponent },
             { path: 'car', component: CarComponent },
-            { path: 'engine/:id', component: EngineDetailComponent },
+            {   path: 'engine/:id',
+                component: EngineDetailComponent,
+                canActivate: [ EngineDetailGuard ]},
             { path: 'dashboard', component: DashboardComponent },
             { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
             { path: '**', component: PageNotFoundComponent },
@@ -37,7 +40,8 @@ import { EngineService } from "./engine/engine.service";
     ],
     providers: [
         CarService,
-        EngineService
+        EngineService,
+        EngineDetailGuard
     ],
     bootstrap: [AppComponent]
 })

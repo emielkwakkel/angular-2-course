@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { IEngine } from '../engine.interface'
 import { EngineService } from "../engine.service";
 
@@ -16,12 +16,18 @@ export class EngineDetailComponent implements OnInit {
     };
     public errorMessage: string = '';
 
-    constructor(private _route: ActivatedRoute, private _engineService: EngineService) {
+    constructor(private _route: ActivatedRoute,
+                private _engineService: EngineService,
+                private _router: Router) {
         this.id = this._route.snapshot.params['id'];
     }
 
     ngOnInit() {
         this.getEngine(this.id);
+    }
+
+    onBack() : void {
+        this._router.navigate(['/engines'])
     }
 
     private getEngine(id) {
