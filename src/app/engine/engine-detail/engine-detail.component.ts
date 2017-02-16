@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CarService } from '../../car/car.service';
+import { IEngine } from '../engine.interface'
 
 @Component({
   selector: 'app-engine-detail',
@@ -9,7 +10,7 @@ import { CarService } from '../../car/car.service';
 })
 export class EngineDetailComponent implements OnInit {
   private id: number;
-  public engine: any;
+  public engine: IEngine[];
   public errorMessage: string = '';
 
   constructor(private _route: ActivatedRoute, private _carService: CarService) {
@@ -19,7 +20,7 @@ export class EngineDetailComponent implements OnInit {
   ngOnInit() {
     this._carService
       .getEngine(this.id)
-      .subscribe(engine => this.engine = engine,
+      .subscribe(engine => this.engine = <IEngine[]> engine,
                  error => this.errorMessage = <any>error);
   }
 

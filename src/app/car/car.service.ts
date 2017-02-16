@@ -5,6 +5,7 @@ import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
+import { IEngine } from "../engine/engine.interface";
 
 @Injectable()
 export class CarService {
@@ -13,18 +14,18 @@ export class CarService {
   constructor(private _http: Http) {
   }
 
-  getEngines(): Observable<string[]> {
+  getEngines(): Observable<IEngine[]> {
     return this._http
       .get(this._APIUrl + '/engines.json')
-      .map((response: Response) => <string[]> response.json())
+      .map((response: Response) => <IEngine[]> response.json())
       .do(data => console.log('All: ' + JSON.stringify(data)))
       .catch(this.handleError);
   }
 
-  getEngine(id: number): Observable<string[]> {
+  getEngine(id: number): Observable<IEngine[]> {
     return this._http
       .get(`${this._APIUrl}/engines/${id}.json`)
-      .map((response: Response) => <string> response.json())
+      .map((response: Response) => <IEngine> response.json())
       .catch(this.handleError);
   }
 
