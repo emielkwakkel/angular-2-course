@@ -4,8 +4,8 @@ import { EngineListComponent } from "./engine-list/engine-list.component";
 import { RouterModule } from "@angular/router";
 import { EngineDetailGuard } from "./engine-detail/engine-detail-guard.service";
 import { EngineService } from "./engine.service";
-import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
+import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
     declarations: [
@@ -14,7 +14,7 @@ import { BrowserModule } from "@angular/platform-browser";
     ],
     imports: [
         BrowserModule,
-        FormsModule,
+        SharedModule,
         RouterModule.forChild([
             { path: 'engines', component: EngineListComponent },
             {   path: 'engine/:id',
