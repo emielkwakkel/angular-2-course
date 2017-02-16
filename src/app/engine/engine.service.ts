@@ -22,7 +22,7 @@ export class EngineService {
             .catch(this.handleError);
     }
 
-    getEngine(id: number): Observable<IEngine[]> {
+    getEngine(id: number): Observable<IEngine> {
         return this._http
             .get(`${this._APIUrl}/engines/${id}.json`)
             .map((response: Response) => <IEngine> response.json())

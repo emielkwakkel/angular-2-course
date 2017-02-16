@@ -10,7 +10,10 @@ import { EngineService } from "../engine.service";
 })
 export class EngineDetailComponent implements OnInit {
     private id: number;
-    public engine: IEngine[];
+    public engine: IEngine = {
+        id: 1,
+        name: ''
+    };
     public errorMessage: string = '';
 
     constructor(private _route: ActivatedRoute, private _engineService: EngineService) {
@@ -18,10 +21,14 @@ export class EngineDetailComponent implements OnInit {
     }
 
     ngOnInit() {
-        this._engineService
-            .getEngine(this.id)
-            .subscribe(engine => this.engine = <IEngine[]> engine,
-                       error => this.errorMessage = <any>error);
+        this.getEngine(this.id);
+    }
+
+    private getEngine(id) {
+        return this._engineService
+            .getEngine(id)
+            .subscribe(engine => this.engine = engine,
+                error => this.errorMessage = <any>error);
     }
 
 }
