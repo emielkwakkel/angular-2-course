@@ -21,7 +21,7 @@ export class EngineDetailComponent implements OnInit {
         this._engineService
             .getEngine(this.id)
             .subscribe(engine => this.engine = <IEngine[]> engine,
-                error => this.errorMessage = <any>error);
+                       error => this.errorMessage = <any>error);
     }
 
 }
