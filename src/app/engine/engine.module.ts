@@ -4,7 +4,6 @@ import { EngineListComponent } from "./engine-list/engine-list.component";
 import { RouterModule } from "@angular/router";
 import { EngineDetailGuard } from "./engine-detail/engine-detail-guard.service";
 import { EngineService } from "./engine.service";
-import { BrowserModule } from "@angular/platform-browser";
 import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
@@ -13,7 +12,6 @@ import { SharedModule } from "../shared/shared.module";
         EngineListComponent
     ],
     imports: [
-        BrowserModule,
         SharedModule,
         RouterModule.forChild([
             { path: 'engines', component: EngineListComponent },

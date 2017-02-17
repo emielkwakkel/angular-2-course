@@ -8,6 +8,7 @@ import { RouterModule } from "@angular/router";
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { EngineModule } from "./engine/engine.module";
+import { BrowserModule } from "@angular/platform-browser";
 
 @NgModule({
     declarations: [
@@ -17,6 +18,7 @@ import { EngineModule } from "./engine/engine.module";
         PageNotFoundComponent
     ],
     imports: [
+        BrowserModule,
         EngineModule,
         HttpModule,
         RouterModule.forRoot([
