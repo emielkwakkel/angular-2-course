@@ -18,3 +18,10 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 Before running the tests make sure you are serving the app via `ng serve`.
+
+## Assignments
+
+### E2E Testing
+Start out in the `assignments.e2e-spec.ts` file and follow the comments!
+Todo's indicate where your solution must be placed.
+If you are ever stuck, check out the `solution.e2e-spec.ts` file for the solution.

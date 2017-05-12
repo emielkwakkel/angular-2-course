@@ -5,28 +5,48 @@
 var SpecReporter = require('jasmine-spec-reporter');
 
 exports.config = {
-  allScriptsTimeout: 11000,
-  specs: [
-    './e2e/**/*.e2e-spec.ts'
-  ],
-  capabilities: {
-    'browserName': 'chrome'
-  },
-  directConnect: true,
-  baseUrl: 'http://localhost:4200/',
-  framework: 'jasmine',
-  jasmineNodeOpts: {
-    showColors: true,
-    defaultTimeoutInterval: 30000,
-    print: function() {}
-  },
-  useAllAngular2AppRoots: true,
-  beforeLaunch: function() {
-    require('ts-node').register({
-      project: 'e2e'
-    });
-  },
-  onPrepare: function() {
-    jasmine.getEnv().addReporter(new SpecReporter());
-  }
+    allScriptsTimeout: 11000,
+
+    // This is where we include our spec files
+    specs: [
+        // this is used to include all specs in the e2e folder
+        './e2e/**/*.e2e-spec.ts'
+    ],
+
+    // We specify our browser setup here
+    capabilities: {
+        'browserName': 'chrome'
+    },
+
+    // This allows protractor to control the browser without the selenium server
+    directConnect: true,
+
+    // The base url of the application
+    baseUrl: 'http://localhost:4200/',
+
+    // The testing framework which is used
+    framework: 'jasmine',
+
+    // Some configuration for the testing framework
+    jasmineNodeOpts: {
+        showColors: true,
+        defaultTimeoutInterval: 30000,
+        print: function() {
+        }
+    },
+
+
+    useAllAngular2AppRoots: true,
+
+    // Run the tests on a node environment
+    beforeLaunch: function() {
+        require('ts-node').register({
+            project: 'e2e'
+        });
+    },
+
+    // Adds a reporter to show a pretty output
+    onPrepare: function() {
+        jasmine.getEnv().addReporter(new SpecReporter());
+    }
 };
