@@ -4,6 +4,9 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { EngineListComponent } from './engine-list.component';
+import { RouterModule } from "@angular/router";
+import { EngineService } from "../engine.service";
+import { HttpModule } from "@angular/http";
 
 describe('EngineListComponent', () => {
   let component: EngineListComponent;
@@ -11,7 +14,9 @@ describe('EngineListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EngineListComponent ]
+      imports: [ RouterModule, HttpModule ],
+      declarations: [ EngineListComponent ],
+      providers: [ EngineService ]
     })
     .compileComponents();
   }));
