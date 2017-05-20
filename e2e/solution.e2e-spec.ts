@@ -13,7 +13,7 @@ describe('Solutions', function () {
         it('should contain a welcome text', () => {
             const welcomeElement = element(by.css('p'));
             const text = welcomeElement.getText();
-            expect(text).toEqual('dashboard works!');
+            expect(text).toEqual('Car management dashboard.');
         });
 
         // Assignment 2: "Adding an action"

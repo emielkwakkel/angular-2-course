@@ -6,6 +6,6 @@ describe('Hello World!', function () {
 
     it('should display message saying Car management!', () => {
         const title = element(by.css('app-root h1')).getText();
-        expect(title).toEqual('Car management!');
+        expect(title).toEqual('Dashboard');
     });
 });
