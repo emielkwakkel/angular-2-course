@@ -5,7 +5,7 @@ import { DebugElement } from '@angular/core';
 
 import { PageNotFoundComponent } from './page-not-found.component';
 
-describe('PageNotFoundComponent', () => {
+fdescribe('PageNotFoundComponent', () => {
   let component: PageNotFoundComponent;
   let fixture: ComponentFixture<PageNotFoundComponent>;
 
@@ -25,4 +25,14 @@ describe('PageNotFoundComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it(`should display the error message 'Page not found!'`, async(() => {
+    expect(component.message).toEqual('Page not found!');
+  }));
+
+  it('should render the error message in a h2 tag', async(() => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h2').textContent).toContain(component.message);
+  }));
 });
+
