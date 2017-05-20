@@ -5,6 +5,7 @@ import { RouterModule } from "@angular/router";
 import { EngineDetailGuard } from "./engine-detail/engine-detail-guard.service";
 import { EngineService } from "./engine.service";
 import { SharedModule } from "../shared/shared.module";
+import { EngineRoutes } from "./engine.routes";
 
 @NgModule({
     declarations: [
@@ -13,12 +14,7 @@ import { SharedModule } from "../shared/shared.module";
     ],
     imports: [
         SharedModule,
-        RouterModule.forChild([
-            { path: 'engines', component: EngineListComponent },
-            {   path: 'engine/:id',
-                component: EngineDetailComponent,
-                canActivate: [ EngineDetailGuard ]}
-        ])
+        RouterModule.forChild(EngineRoutes)
     ],
     providers: [
         EngineService,
