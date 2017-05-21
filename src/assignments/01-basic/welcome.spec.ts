@@ -1,6 +1,6 @@
 import { welcome }  from './welcome';
 
-fdescribe('welcome', () => {
+describe('welcome', () => {
     it('should contain the supplied name in the output', () => {
         const result = welcome('Willie');
         expect(result).toContain('Willie');
