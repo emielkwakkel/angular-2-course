@@ -1,5 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { CarService } from "./car.service";
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { IEngine } from '../engine/engine.interface';
 
 @Component({
@@ -7,19 +6,11 @@ import { IEngine } from '../engine/engine.interface';
     templateUrl: './car.component.html',
     styleUrls: ['./car.component.css']
 })
-export class CarComponent implements OnInit {
+export class CarComponent {
     @Input() wheels: number;
     @Output() startEngine: EventEmitter<string> = new EventEmitter<string>();
-
-    constructor() {
-    }
 
     onClick() {
         this.startEngine.emit('Starting engines');
     }
-
-    ngOnInit() {
-        console.log(this.wheels);
-    }
-
 }
