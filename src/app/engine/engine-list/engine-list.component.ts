@@ -19,5 +19,4 @@ export class EngineListComponent implements OnInit {
         .subscribe(engines => this.engines = <IEngine[]>engines,
             error => this.errorMessage = <any>error);
   }
-
 }
