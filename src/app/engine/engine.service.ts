@@ -18,7 +18,7 @@ export class EngineService {
         return this._http
             .get(this._APIUrl + '/engines.json')
             .map((response: Response) => <IEngine[]> response.json())
-            .do(data => console.log('All: ' + JSON.stringify(data)))
+            // .do(data => console.log('All: ' + JSON.stringify(data)))
             .catch(this.handleError);
     }
 
