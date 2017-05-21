@@ -17,25 +17,25 @@ describe('Solutions', function () {
         });
 
         // Assignment 2: "Adding an action"
-        it('should contain a link saying engines', () => {
-            const engineLink = element.all(by.css('app-root li a')).get(1);
-            const text = engineLink.getText();
-            expect(text).toBe('Engines');
+        it('should contain a link saying dashboard', () => {
+            const dashboardLink = element.all(by.css('app-root li a')).get(0);
+            const text = dashboardLink.getText();
+            expect(text).toBe('Dashboard');
         });
 
         // Assignment 3: "JQuery shorthands"
-        it('should have a link containing car', () => {
-            const carLink = $$('app-root li a').get(2);
-            const text = carLink.getText();
-            expect(text).toEqual('Car');
+        it('should have a link containing engines', () => {
+            const engineLink = $$('app-root li a').get(1);
+            const text = engineLink.getText();
+            expect(text).toEqual('Engines');
         });
 
         // Assignment 4: "Click that button"
-        it('should go to the car page when the car link is clicked', () => {
-            const carLink = $$('app-root li a').get(2);
-            carLink.click();
-            const carText = $('p').getText();
-            expect(carText).toBe('car has wheels.');
+        it('should go to the engines page when the engines link is clicked', () => {
+            const engineLink = $$('app-root li a').get(1);
+            engineLink.click();
+            const engineTitle = $('h2').getText();
+            expect(engineTitle).toBe('Engines');
         });
 
         // Assignment 5: "Using a page object"

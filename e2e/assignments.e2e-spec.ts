@@ -15,43 +15,43 @@ describe('Assignments', function () {
             /* Todo Add the correct locator
                 This locator is faulty, make it select the welcome message of the dashboard
              */
-            const welcomeElement = element(by.css('h1'));
+            const welcomeElement = element(by.css('h2'));
             const text = welcomeElement.getText();
-            expect(text).toEqual('dashboard works!');
+            expect(text).toEqual('Car management dashboard.');
         });
 
         // Assignment 2: "Adding an action"
-        it('should contain a link saying engines', () => {
-            const engineLink = element.all(by.css('app-root li a')).get(1);
+        it('should contain a link saying dashboard', () => {
+            const dashboardLink = element.all(by.css('app-root li a')).get(0);
             const text = '';
             /* Todo Add your action
                 hint: we need to get the link text and add it to the expectation
              */
-            expect(text).toBe('Engines');
+            expect(text).toBe('Dashboard');
         });
 
         // Assignment 3: "JQuery shorthands"
-        it('should have a link containing car', () => {
+        it('should have a link containing engines', () => {
             /* Todo
-                 Write a similar test, but this time check for the "Car" link.
+                 Write a similar test, but this time check for the "Engines" link.
                  Also use the JQuery shorthand for element.all(by.css()).
                  The selector for the test above would be:
                  $$('app-root li a').get(1)
              */
-            const carLink = ''; // todo put your selector here
+            const engineLink = ''; // todo put your selector here
             const text = '';
-            expect(text).toEqual('Car');
+            expect(text).toEqual('Engines');
         });
 
         // Assignment 4: "Click that button"
-        it('should go to the car page when the car link is clicked', () => {
-            const carLink = $$('app-root li a').get(2);
+        it('should go to the engines page when the engines link is clicked', () => {
+            const engineLink = $$('app-root li a').get(1);
 
             // Todo call the click action on the element
 
-            // Todo write a selector to get the "p" element and assign it to carText
-            const carText = '';
-            expect(carText).toBe('car has wheels.');
+            // Todo write a selector to get the "h2" element and assign it to engineTitle
+            const engineTitle = '';
+            expect(engineTitle).toBe('Engines');
         });
 
         // Assignment 5: "Using a Page Object"
