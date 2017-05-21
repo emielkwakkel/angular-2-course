@@ -6,8 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Car management!';
-  onStartEngine(message: string) : void {
-    console.log(message);
-  }
 }
