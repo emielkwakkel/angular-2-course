@@ -12,7 +12,7 @@ describe('EngineService', () => {
     });
   });
 
-  it('should ...', inject([EngineService], (service: EngineService) => {
+  it('should create', inject([EngineService], (service: EngineService) => {
     expect(service).toBeTruthy();
   }));
 });
