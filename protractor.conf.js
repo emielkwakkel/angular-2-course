@@ -22,7 +22,7 @@ exports.config = {
     directConnect: true,
 
     // The base url of the application
-    baseUrl: 'http://localhost:4200/',
+    baseUrl: 'http://localhost:4201/',
 
     // The testing framework which is used
     framework: 'jasmine',
@@ -34,7 +34,6 @@ exports.config = {
         print: function() {
         }
     },
-
 
     useAllAngular2AppRoots: true,
 
