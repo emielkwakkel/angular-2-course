@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { IEngine } from '../engine/engine.interface';
 
 @Component({
     selector: 'app-car',
