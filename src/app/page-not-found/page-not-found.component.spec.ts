@@ -31,8 +31,8 @@ describe('PageNotFoundComponent', () => {
   }));
 
   it('should render the error message in a h2 tag', async(() => {
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h2').textContent).toContain(component.message);
+    const componentElement = fixture.debugElement.nativeElement;
+    expect(componentElement.querySelector('h2').textContent).toContain(component.message);
   }));
 });
 
